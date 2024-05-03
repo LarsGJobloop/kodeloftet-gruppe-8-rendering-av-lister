@@ -1,5 +1,6 @@
+import { persons } from './data.js'
+
 function createPersonCard(person) {
-    console.log(person)
     // Genere et html element
     const articleElement = document.createElement("article")
 
@@ -38,3 +39,14 @@ const larsElement = createPersonCard(lars)
 const container = document.getElementById("single-person")
 // 2. Sett inn det nye elemntet som et under element
 container.appendChild(larsElement)
+
+
+// === Rendring av lister ===
+const listElement = document.getElementById("person-list")
+
+for (let index = 0; index < persons.length; index++) {
+    console.log(persons[index])
+    const newPerson = createPersonCard(persons[index])
+    console.log(newPerson)
+    listElement.appendChild(newPerson)
+}
